@@ -1,0 +1,74 @@
+{
+    "common":{
+        "api":{
+            "services": ["http://ip:8080/"],
+            "osint_services_endpoints": ["http://ip:8086/"],
+            "storage": ["http://ip:8082/"],
+            "java_services": ["http://ip:8084/JavaServices/"],
+            "wikipedia_miner": ["http://ip:8084/wikipedia-miner/services/"],
+            "db_spotlight": [],
+            "wayback": ["http://archive.org/wayback/available?url="],
+            "microservices": {
+                "collection": {
+
+                },
+                "processing": {
+                    "translation": []
+                },
+                "exploitation": {
+
+                },
+                "production": {
+
+                }
+            }
+        },
+        "solr":{
+            "connection":{
+                "connection": "http",
+                "type": "available",
+                "user": "",
+                "password": "",
+                "ip": "",
+                "port": "",
+                "directory": "solr",
+                "endpoint": "/"
+            },
+            "https_pem_cert": ""
+        },
+        "neo4j":{
+            "connection1":{
+                "user": "neo4j",
+                "password": "",
+                "ip": "",
+                "bolt_port": "",
+                "http_port": "",
+                "connection": "",
+                "type": "",
+                "directory": ""
+            },
+            "connectionDisambiguation":{
+                "user": "",
+                "password": "",
+                "ip": "",
+                "bolt_port": "",
+                "http_port": "",
+                "connection": "",
+                "type": "",
+                "directory": ""
+            }
+        }
+    },
+    "traced":{
+        "solr":{
+            "cores":{
+                "investigations_core": "",
+                "seed_images_logger": "",
+                "docs_core": "",
+                "secondary_core": "",
+                "social_core": "",
+                "local_file_core": ""
+            }
+        }
+    }
+}

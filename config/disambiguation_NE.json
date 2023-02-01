@@ -1,0 +1,25 @@
+{
+    "execute": "traced3_docs",
+    "executions":{ 
+        "traced3_docs": {
+            "description": "DISAMBIGUATION",
+            "number_docs": 50,
+            "th_embedding": 0.8,
+            "th_names": 0.75,
+            "th_minutes": 30,
+            "memory_graph": "allkg",
+            "memory_graph_nodes": ["Person", "Organization", "Location", "Document"],
+            "embedding_walkLength": 10,
+            "embedding_iterations": 10,
+            "embedding_dimension": 16,
+            "embedding_propertyName": "embeddingNode2vec",
+            "workers": 1,
+            "core": "docs_core",
+            "graph": "connectionDisambiguation",
+            "dna_selector_fl": "id, person_NE, location_NE, organization_NE",
+            "facet_fields_to_parse": ["person_NE","location_NE","organization_NE"],
+            "facet_query": "*:*",
+            "entities_selector_fl": "id, name, first_name, type, id_investigation"
+        }
+    }
+}
