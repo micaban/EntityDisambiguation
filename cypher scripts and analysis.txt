@@ -1,0 +1,17 @@
+LOAD CSV WITH HEADERS FROM 'file:///ACM.csv' AS row
+MERGE (e:Article {index: row.id})
+WITH e, row
+UNWIND split(row.authors, ',') AS author
+MERGE (s:Author {name: lTrim(author)})
+MERGE (e)-[r:HAS_AUTHOR]->(s)
+
+
+LOAD CSV WITH HEADERS FROM 'file:///DBLP-ACM_perfectMapping.csv' AS row
+MERGE (e:Article {index: row.idDBLP})
+MERGE (e:Article {index: row.idACM})
+MERGE (e.idDBLP)-[r:HAS_RELATION]->(e.idACM)
+
+
+MATCH (m:Author)<-[:HAS_AUTHOR]-(b)-[r:IS_RELATED]-(a)-[:HAS_AUTHOR]->(n:Author) 
+where n.name CONTAINS 'Curtis Dyreson' AND m.name contains 'Curtis E. Dyreson' 
+RETURN b.index as DBLPid,a.index as ACMid,n.name as ACMname,m.name as DBLPname
