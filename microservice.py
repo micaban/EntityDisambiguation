@@ -14,10 +14,6 @@ from itertools import repeat, islice, combinations, permutations
 import multiprocessing
 import unidecode
 
-
-from system.services.ServicesManager import ServicesManager
-services = ServicesManager()
-
 from system.services.InvestigationManager import InvestigationManager
 investigationManager = InvestigationManager()
 
